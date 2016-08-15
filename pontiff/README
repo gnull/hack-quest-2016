@@ -1,0 +1,13 @@
+plaintext -- открытый текст, его должен получить участник.
+
+ciphertext -- шифротекст, его мы даем участнику. Создается командой:
+
+  ./main.pl plaintext key ciphertext
+
+key -- ключ, который мы не даем участнику. Создается командой:
+
+  dd bs=10 count=1 if=/dev/urandom of=key
+
+Задача решается программой `https://github.com/hellman/xortool`:
+
+  xortool ./ciphertext -c 20
