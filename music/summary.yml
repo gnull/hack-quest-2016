@@ -1,0 +1,10 @@
+---
+answer_regex: CCHQ#perlV_1s_ug1y#
+author: io, dvh
+category: pwn
+description: |
+  Я написал сервер для раздачи своих аудиозаписей. Но был пьян и писал его на perl5. Как тебе?
+
+  echo my_song_name.mp3 | netcat host port
+name: music
+price: 100
