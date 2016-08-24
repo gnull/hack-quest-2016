@@ -1,0 +1,8 @@
+---
+answer_regex: CCHQ#OnlyBottomsFearBottomUp#
+author: dvh
+category: reverse, ppc
+description: |
+  Любишь питон? Попробуй что-нибудь новое {ссылка на main.hs}. netcat host port
+name: haskell
+price: 200
