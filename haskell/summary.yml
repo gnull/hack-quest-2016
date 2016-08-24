@@ -3,6 +3,6 @@ answer_regex: CCHQ#OnlyBottomsFearBottomUp#
 author: dvh
 category: reverse, ppc
 description: |
-  Любишь питон? Попробуй что-нибудь новое {ссылка на main.hs}. netcat host port
+  Иногда понять, что делает программа, сложнее, чем искать ошибки. {ссылка на main.hs}. netcat host port
 name: haskell
 price: 200
