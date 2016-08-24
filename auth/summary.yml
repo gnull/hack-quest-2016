@@ -1,0 +1,8 @@
+---
+answer_regex: CCHQ#ecdc46e918cec74#
+author: io
+category: pwn
+description: |
+  Авторизация по паролю? Это для слабаков. Мы придумали свою схему. netcat host port
+name: auth
+price: 100
