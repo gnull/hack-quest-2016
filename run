@@ -1,4 +1,4 @@
-#!/bin/sh -xefu
+#!/bin/sh -efu
 
 all_tasks="$(ls -F | grep '/$' | sed 's:/$::')"
 
@@ -18,26 +18,26 @@ printf "\n";
 if test "${1:-x}" = "start"; then
 
   for task in $tasks; do
-    printf "%10s: " "$task"
+    printf "%10s:\n" "$task"
     dir="$task/create/"
     script="./$task/create/run.sh"
 
-    (cd $dir; daemon -v -f --respawn --name=$task -- $script)
+    (
+      cd $dir;
+      nohup ./run.sh >"log" 2>&1 </dev/null &
+      echo $! >> ../../pids
+    )
   done
 
 elif test "${1:-x}" = "stop"; then
 
-  for task in $tasks; do
-    printf "%10s: " "$task"
-    daemon --stop --name=$task -v
-  done
+  pids=$(cat pids && true)
+  echo killing $pids
+  echo > pids
 
 elif test "${1:-x}" = "list"; then
 
-  for task in $tasks; do
-    printf "%10s: " "$task"
-    daemon --running --name=$task -v
-  done
+  echo not implemented 
 
 else
 
