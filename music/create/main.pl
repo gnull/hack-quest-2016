@@ -1,10 +1,10 @@
 #!/usr/bin/env perl
 
-while (1) {
-    $file = <>;
-    open fh, $file;
-    for $i (<fh>) {
-	print "$i";
-    }
-};
+select((select(OUTPUT_HANDLE), $| = 1)[0]);
+
+$file = <>;
+open fh, $file;
+for $i (<fh>) {
+    print "$i";
+}
 
