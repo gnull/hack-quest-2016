@@ -5,6 +5,6 @@ category: pwn
 description: |
   Я написал сервер для раздачи своих аудиозаписей. Но был пьян и писал его на perl5. Как тебе?
 
-  echo my_song_name.mp3 | netcat host port
+  echo my_song_name.mp3 | netcat 89.110.34.174 1026
 name: music
 price: 100
