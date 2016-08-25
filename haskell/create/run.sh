@@ -2,4 +2,4 @@
 
 ghc main.hs
 
-ncat -klp 8080 -c ./main
+ncat -klp 1025 -c ./main

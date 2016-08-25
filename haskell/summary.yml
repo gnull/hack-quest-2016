@@ -3,6 +3,10 @@ answer_regex: CCHQ#OnlyBottomsFearBottomUp#
 author: dvh
 category: reverse, ppc
 description: |
-  Иногда понять, что делает программа, сложнее, чем искать ошибки. {ссылка на main.hs}. netcat host port
+  Иногда понять, что делает программа, сложнее, чем искать ошибки.
+
+  https://www.dropbox.com/s/eunjs2b1sftgy8v/main.hs?dl=0
+
+  netcat 89.110.34.174 1025
 name: haskell
 price: 200
