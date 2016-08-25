@@ -3,6 +3,8 @@ answer_regex: CCHQ#ecdc46e918cec74#
 author: io
 category: pwn
 description: |
-  Авторизация по паролю? Это для слабаков. Мы придумали свою схему и не боимся показать исходники {ссылка на main.pl}. netcat host port
+  Авторизация по паролю? Это для слабаков. Мы придумали свою схему и не боимся показать исходники: https://www.dropbox.com/s/ad3w5febww99z0k/main.pl?dl=0 .
+
+  netcat 89.110.34.174 1024
 name: auth
 price: 100
