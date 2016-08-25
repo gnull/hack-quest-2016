@@ -16,5 +16,5 @@ f s d (b, c) = let k = gcd ((t d - b) ^ 2) (t d * b ^ (1 + s `mod` 2)) == 1
 
 test_str s = (.) snd $ g (f s . ord) =<< (,) (t s) . (\k -> (length k == s) && (k == sortBy (flip compare) k))
 
-main = interact $ (\a -> if a then "Flag" else "Fuck you") . test_str 23
+main = interact $ (\a -> if a then "Flag is CCHQ#OnlyBottomsFearBottomUp#" else "Fuck you") . test_str 23
 
