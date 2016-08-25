@@ -1,0 +1,46 @@
+#!/bin/sh -xefu
+
+all_tasks="$(ls -F | grep '/$' | sed 's:/$::')"
+
+tasks=
+
+for i in $all_tasks; do
+  script="./$i/create/run.sh"
+  if test -x "$script"; then
+    tasks=$(printf "%s\n%s" "$tasks" "$i")
+  else
+    printf "%10s: no run.sh\n" "$i"
+  fi
+done
+
+printf "\n";
+
+if test "${1:-x}" = "start"; then
+
+  for task in $tasks; do
+    printf "%10s: " "$task"
+    dir="$task/create/"
+    script="./$task/create/run.sh"
+
+    (cd $dir; daemon -v -f --respawn --name=$task -- $script)
+  done
+
+elif test "${1:-x}" = "stop"; then
+
+  for task in $tasks; do
+    printf "%10s: " "$task"
+    daemon --stop --name=$task -v
+  done
+
+elif test "${1:-x}" = "list"; then
+
+  for task in $tasks; do
+    printf "%10s: " "$task"
+    daemon --running --name=$task -v
+  done
+
+else
+
+  echo "What can I do for you? start? stop? list?"
+
+fi
